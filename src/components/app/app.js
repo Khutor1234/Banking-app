@@ -1,20 +1,20 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Header from '../header';
-import { HomePage, PaymentPage, TopUpPage, AccountsPage, SettingPage } from '../pages';
+import Menu from '../menu';
+import { HomePage, PaymentPage, TopUpPage, AccountsPage, ProfilePage } from '../pages';
 
 import './app.sass';
 
 const App = () => {
   return (
     <main role="main" className="container">
-      <Header />
+      <Menu />
       <Switch>
         <Route path="/" component={HomePage} exact />
         <Route path="/payment" component={PaymentPage} />
         <Route path="/top-up" component={TopUpPage} />
         <Route path="/accounts" component={AccountsPage} />
-        <Route path="/setting" component={SettingPage} />
+        <Route path="/profile" component={ProfilePage} />
       </Switch>
     </main>
   );
