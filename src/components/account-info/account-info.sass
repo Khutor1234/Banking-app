@@ -1,10 +1,10 @@
 .balance
     position: fixed
-    top: 40px
+    top: 20px
     bottom: 0
     left: 750px
     width: calc(100vw - 750px)
-    height: calc(100vh - 50px)
+    height: calc(100vh - 20px)
     background-color: #fff
     border-radius: 40px 0px 0px 0px
     padding: 33px 37px
@@ -41,6 +41,13 @@
             box-sizing: border-box
             border-radius: 20px
             font-size: 14px
+            transition: all 0.5s 0s ease
             svg
                 margin-right: 9px
+            &:hover
+                background: linear-gradient(180deg, #FD3A6C 0%, #F5855C 100%)
+                box-shadow: 0px 0px 7px #EE4874
+                color: #fff
+                & svg path
+                    fill: white
     

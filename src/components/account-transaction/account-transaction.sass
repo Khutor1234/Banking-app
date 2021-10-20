@@ -14,7 +14,16 @@
         align-items: center
         justify-content: space-between
         padding: 15px 15px
+        transition: all 0.5s 0s ease 
         margin-right: 20px
+        &:hover
+            background: linear-gradient(180deg, #FD3A6C 0%, #F5855C 100%)
+            box-shadow: 0px 0px 7px #EE4874
+            color: #fff
+            & svg path
+                fill: white
+            & .transaction-link
+                color: white                
         img
             display: block
             width: 60px
@@ -25,7 +34,6 @@
         align-items: center
         color: #FD3A6C
         text-decoration: none
-        padding-top: 17px
         span
             text-align: center
             margin-top: 12px
