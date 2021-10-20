@@ -1,7 +1,24 @@
 import React from 'react';
+import BalanceList from '../balance-list';
 
-const PaymentPage = () => {
-  return <div>Payment page</div>
+const PaymentPage = ({location}) => {
+  return(
+    <React.Fragment>
+        <div className="payment-header">
+			<svg width="16" height="13" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M0 10.9388C0 11.6635 0.58202 12.2514 1.29939 12.2514H14.2933C15.0107 12.2514 15.5927 11.6635 15.5927 10.9388V6.12572H0V10.9388ZM5.19758 9.07919C5.19758 8.8987 5.34376 8.75102 5.52242 8.75102H9.20404C9.38271 8.75102 9.52889 8.8987 9.52889 9.07919V10.1731C9.52889 10.3536 9.38271 10.5012 9.20404 10.5012H5.52242C5.34376 10.5012 5.19758 10.3536 5.19758 10.1731V9.07919ZM1.73253 9.07919C1.73253 8.8987 1.87871 8.75102 2.05737 8.75102H4.00646C4.18513 8.75102 4.33131 8.8987 4.33131 9.07919V10.1731C4.33131 10.3536 4.18513 10.5012 4.00646 10.5012H2.05737C1.87871 10.5012 1.73253 10.3536 1.73253 10.1731V9.07919ZM15.5927 1.31265V2.62531H0V1.31265C0 0.587959 0.58202 0 1.29939 0H14.2933C15.0107 0 15.5927 0.587959 15.5927 1.31265Z" fill="#EE4874"/>
+			</svg>
+			<h2 className="payment-header-text">Send Money From:</h2>
+        </div>
+		<BalanceList selectedItem={location.selectedItem}/>
+		<div className="payment-item">
+				<svg width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M13.7346 0.103548L0.360394 8.67398C-0.161877 9.00731 -0.0955108 9.81499 0.423875 10.0586L3.49114 11.4881L11.7811 3.37275C11.9398 3.2157 12.1649 3.45608 12.0293 3.63877L5.07815 13.0457V15.6258C5.07815 16.3822 5.90051 16.6803 6.30448 16.1322L8.13675 13.6547L11.7321 15.3278C12.1418 15.5201 12.6092 15.2348 12.6843 14.7444L14.7618 0.898412C14.8599 0.250982 14.2338 -0.216962 13.7346 0.103548Z" fill="#FD3A6C"/>
+				</svg>
+				<div className="payment-item-text">Send Money</div>
+		</div>
+    </React.Fragment>
+    )
 };
 
 export default PaymentPage;

@@ -7,8 +7,26 @@
     width: 212px
     height: 100vh
     border-right: 1px solid #DADADA
+    &-active
+        padding-left: 20px
+        position: relative
+        &::before
+            content: ''
+            position: absolute
+            top: 50%
+            transform: translate(-50%, -50%)
+            left: 5px
+            width: 5px
+            height: 5px
+            border-radius: 100%
+            background-color: #FD3A6C
+        span
+            color: #FD3A6C
+        path
+            fill: #FD3A6C !important
     &-item
-        display: block
+        display: flex
+        align-items: center
         margin-left: 29px
         margin-bottom: 35px
         text-decoration: none

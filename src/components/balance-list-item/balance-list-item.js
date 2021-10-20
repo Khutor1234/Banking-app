@@ -1,29 +1,37 @@
 import React from 'react';
 import './balance-list-item.sass';
+import { onShowDetails } from '../../actions';
+import { connect } from 'react-redux';
 
-const BalanceListItem = ({data}) => {
-  const {title, balance, currency} = data;
+const BalanceListItem = ({account, onShowDetails, selectedItem, selectedPayment}) => {
+	const {title, balance, currency} = account;
+	
+	let classActive 
+	if(selectedItem && currency === selectedItem.currency){
+		classActive = 'active'
+	}
+	if(selectedPayment && currency === selectedPayment.currency && !selectedItem){
+		classActive = 'active'
+	}
 
-  return (
-    <div className='balance-item '>
-      <div className={`${currency} ${'balance-title'}`}>{title}</div>
-      <div className={`${currency} ${'balance-amount'}`}>{balance}</div>
-    </div>
-  );
+	return (
+		<div className={`${classActive} ${'balance-item'}`} onClick={() => onShowDetails(account)}>
+		<div className={`${currency} ${'balance-title'}`}>{title}</div>
+		<div className={`${currency} ${'balance-amount'}`}>{balance}</div>
+		</div>
+	);
 };
-  
-export default BalanceListItem;
 
-// var myHeaders = new Headers();
-// myHeaders.append("x-api-key", "ieLWvByj0Z7obl0aLmVzmiJgbjVXZf987aoRts59");
+const mapDispatchToProps = (dispatch) => {
+	return {
+		onShowDetails: (account) => dispatch(onShowDetails(account)),
+	}
+}
+const mapStateToProps = ({banking: {selectedItem}}) => {
+	return{
+		selectedItem
+	}
+};
 
-// var requestOptions = {
-//   method: 'GET',
-//   headers: myHeaders,
-//   redirect: 'follow'
-// };
+export default connect(mapStateToProps, mapDispatchToProps)(BalanceListItem);
 
-// fetch("https://vhmfz744o2.execute-api.eu-west-2.amazonaws.com/dev/data", requestOptions)
-//   .then(response => response.text())
-//   .then(result => console.log(result))
-//   .catch(error => console.log('error', error));

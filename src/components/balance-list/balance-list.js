@@ -8,38 +8,39 @@ import ErrorIndicator from '../error-indicator'
 
 class BalanceList extends Component {
 
-  componentDidMount(){
-    this.props.fetchAccounts();
-  }
+	componentDidMount(){
+		this.props.fetchAccounts();
+	}
 
-  render(){
+	render(){
 
-    const {accounts, loading, error} = this.props;
+		const {accounts, loading, error, selectedItem} = this.props;
 
-    if(loading){
-      return <Spinner/>
-    }
+		if(loading){
+		return <Spinner/>
+		}
 
-    if(error){
-        return <ErrorIndicator/>
-    }
+		if(error){
+			return <ErrorIndicator/>
+		}
 
-    return (
-      <ul className="balance-list">
-        {
-          accounts.map((item) => {
-            return (
-              <li key={item.id}>
-                <BalanceListItem
-                  data={item}
-                  />
-              </li>
-            );
-          })
-        }
-      </ul>
-    );
-  }
+		return (
+		<ul className="balance-list">
+			{
+				accounts.map((item) => {
+					return (
+						<li key={item.id}>
+							<BalanceListItem
+							account={item}
+							selectedPayment={selectedItem}
+							/>
+						</li>
+					);
+				})
+			}
+		</ul>
+		);
+	}
 };
 
 const mapStateToProps = ({banking: {accounts, loading, error}}) => {

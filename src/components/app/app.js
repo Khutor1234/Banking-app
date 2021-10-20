@@ -6,18 +6,18 @@ import { HomePage, PaymentPage, TopUpPage, AccountsPage, ProfilePage } from '../
 import './app.sass';
 
 const App = () => {
-  return (
-    <main role="main" className="container">
-      <Menu />
-      <Switch>
-        <Route path="/" component={HomePage} exact />
-        <Route path="/payment" component={PaymentPage} />
-        <Route path="/top-up" component={TopUpPage} />
-        <Route path="/accounts" component={AccountsPage} />
-        <Route path="/profile" component={ProfilePage} />
-      </Switch>
-    </main>
-  );
+	return (
+		<main role="main" className="container">
+			<Menu />
+			<Switch>
+				<Route path="/" component={HomePage} exact />
+				<Route path="/payment" component={PaymentPage} />
+				<Route path="/top-up" component={TopUpPage} />
+				<Route path="/accounts" component={AccountsPage} />
+				<Route path="/profile" component={ProfilePage} />
+			</Switch>
+		</main>
+	);
 };
 
 export default App;

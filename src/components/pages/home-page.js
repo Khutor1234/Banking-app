@@ -7,10 +7,10 @@ import './pages.sass';
 const HomePage = () => {
   return (
     <React.Fragment>
-      <h2 className="home-header">Your accounts</h2>
-      <BalanceList/>
-      <Promo/>
-      <AccountInfo/>
+		<h2 className="home-header">Your accounts</h2>
+		<BalanceList/>
+		<Promo/>
+		<AccountInfo/>
     </React.Fragment>
   )
 };

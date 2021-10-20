@@ -20,6 +20,14 @@ const fetchError = (error) => {
         payload: error
     }
 }
+
+const onShowDetails = (account) => {
+    return{
+      type: 'SHOW_DETAILS',
+      payload: account
+    }
+}
+
 const fetchAccounts = (dispatch) => () => {
     dispatch(fetchRequested())
     service.getAccounts()
@@ -28,5 +36,6 @@ const fetchAccounts = (dispatch) => () => {
 }
 
 export{
-    fetchAccounts
+    fetchAccounts,
+    onShowDetails
 }

@@ -1,5 +1,23 @@
-.home-header
+.home-header, .payment-header-text
     font-weight: 700
     font-size: 20px
     margin: 0
     padding-top: 40px 
+
+.payment
+    &-item
+        display: flex
+        align-items: center
+        position: fixed
+        top: 50%
+        left: calc(100vw - (100vw - 601px)/2)
+        transform: translate(-50%, -50%)
+        font-weight: bold
+        font-size: 20px
+        svg
+            margin-right: 14px
+    &-header
+        display: flex
+        svg
+            margin-top: 45px
+            margin-right: 10px
